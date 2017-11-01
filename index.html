@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head> 
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:700i&amp;subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+    <title>Quote Machine</title>
+
+    
+    
+    
+</head>
+<body >
+    <div class="wrapper">
+        
+        <div class="content">
+        
+            <div class="quote">
+                <div id="cytat">
+                
+                </div>
+                <div id="autor">
+                
+                </div>
+                
+                <div class="btn">
+                <button class="button" onclick="nowy()">Nowy cytat</button>
+                <div class="socials">
+                <div id="fb-root"></div>
+
+                                        
+                    <i title="Tweetnij" id="tweet" class="fa fa-twitter" aria-hidden="true" onclick="tweet()"></i>
+                    
+                    
+                
+                    
+               
+                  
+                </div>
+                </div>
+                
+            </div>
+        
+        </div>
+    
+    </div>
+    
+    <script>
+       
+ nowy();       
+
+     
+      
+        
+        
+var cytat;
+var autor;
+var text = cytat + " " + autor;      
+
+var linkTweet = "https://twitter.com/intent/tweet?text=" + text;
+var linkFb = "http://www.facebook.com/sharer.php?u" ;
+   
+function share (){
+   window.open(linkFb);   
+}        
+        
+function tweet(){
+  window.open(linkTweet);    
+    
+    
+}        
+        
+        
+function nowy (){
+var numer=losuj(0,9);
+    
+cytat = quote(numer);
+autor = author(numer);
+    
+document.getElementById("cytat").innerHTML =cytat;
+document.getElementById("autor").innerHTML =autor;
+    
+return ;
+
+}        
+        
+        
+        
+function losuj(myMin, myMax) {
+return Math.floor(Math.random() * (myMax - myMin + 1)) + myMin;
+
+}
+
+ 
+function quote (numer){
+var cytaty = [
+    "To, że milczę, nie znaczy, że nie mam nic do powiedzenia.",
+    "Lepiej zaliczać się do niektórych, niż do wszystkich.", 
+    "Czytanie książek to najpiękniejsza zabawa, jaką sobie ludzkość wymyśliła",
+    "Dobrze widzi się tylko sercem. Najważniejsze jest niewidoczne dla oczu",
+    "Książki są lustrem: widzisz w nich tylko to co, już masz w sobie.",
+    "W chwili, kiedy zastanawiasz się czy kogoś kochasz, przestałeś go już kochać na zawsze.",
+    "Im mniej człowiek wie, tym łatwiej mu żyć. Wiedza daje wolność, ale unieszczęśliwia.",
+    "Cicho, cicho dzieci. To nie demony, nie diabły... Gorzej. To ludzie.",
+    "Śmierć będzie ostatnim wrogiem, który zostanie zniszczony.",
+    "Przyjacielu, jeśli będzie ci dane żyć sto lat, to ja chciałby żyć sto lat minus jeden dzień, abym nie musiał żyć ani jednego dnia bez ciebie.",
+
+]
+return cytaty[numer];
+}
+
+function author (numer){
+    
+
+var autorzy = [
+    "Jonathan Carroll",
+    "Andrzej Sapkowski – Krew elfów",
+    "Wisława Szymborska",
+    "Antoine de Saint-Exupéry – Mały Książę",
+    "Carlos Ruiz Zafón – Cień wiatru",
+    "Carlos Ruiz Zafón – Cień wiatru",
+    "Erich Maria Remarque – Trzej towarzysze","Erich Maria Remarque – Trzej towarzysze",
+    "Andrzej Sapkowski – Wieża jaskółki",
+    "Joanne Kathleen Rowling – Harry Potter i Insygnia Śmierci",
+    "Alan Alexander Milne – Kubuś Puchatek",
+]   
+return autorzy[numer];
+
+}
+
+
+        
+
+             
+           
+        
+        
+        
+        
+
+    </script>    
+    
+    </body>
+    
+    
+    
+    
+    
+</html>
